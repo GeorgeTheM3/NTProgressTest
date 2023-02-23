@@ -11,6 +11,7 @@
 		5E3B441029A78C08000764AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B440F29A78C08000764AB /* SceneDelegate.swift */; };
 		5E3B441729A78C0A000764AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E3B441629A78C0A000764AB /* Assets.xcassets */; };
 		5E3B441A29A78C0A000764AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3B441829A78C0A000764AB /* LaunchScreen.storyboard */; };
+		5E3B442329A78C68000764AB /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B442229A78C68000764AB /* DealsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		5E3B441629A78C0A000764AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E3B441929A78C0A000764AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E3B441B29A78C0A000764AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E3B442229A78C68000764AB /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +56,20 @@
 			children = (
 				5E3B440D29A78C08000764AB /* AppDelegate.swift */,
 				5E3B440F29A78C08000764AB /* SceneDelegate.swift */,
+				5E3B442129A78C58000764AB /* Deals Screen */,
 				5E3B441629A78C0A000764AB /* Assets.xcassets */,
 				5E3B441829A78C0A000764AB /* LaunchScreen.storyboard */,
 				5E3B441B29A78C0A000764AB /* Info.plist */,
 			);
 			path = NTProgressTest;
+			sourceTree = "<group>";
+		};
+		5E3B442129A78C58000764AB /* Deals Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5E3B442229A78C68000764AB /* DealsViewController.swift */,
+			);
+			path = "Deals Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +144,7 @@
 			files = (
 				5E3B440E29A78C08000764AB /* AppDelegate.swift in Sources */,
 				5E3B441029A78C08000764AB /* SceneDelegate.swift in Sources */,
+				5E3B442329A78C68000764AB /* DealsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
