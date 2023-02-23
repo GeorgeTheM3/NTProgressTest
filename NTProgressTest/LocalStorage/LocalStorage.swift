@@ -10,6 +10,7 @@ import Foundation
 class LocalStorage {
     static let shared = LocalStorage()
     
+    // свойства для хранения параметра соритровки и направления
     var sortDerection: SortDerection = .first
     var currentSortType: SortType = .id
     let arraySortsType = [SortType.id, SortType.instrument, SortType.price, SortType.amount, SortType.side]

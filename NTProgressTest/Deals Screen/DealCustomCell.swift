@@ -121,6 +121,7 @@ class DealCustomCell: UITableViewCell {
     }
 }
 
+    // устанавливаем инфу в ячейку
 extension DealCustomCell: PassInfoProtocol {
     func passInfo(dealInfo: Deal) {
         dealDateLabel.text = dealInfo.dateModifier.formatted()

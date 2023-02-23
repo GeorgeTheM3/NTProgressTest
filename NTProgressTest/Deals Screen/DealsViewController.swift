@@ -77,20 +77,21 @@ class DealsViewController: UIViewController {
     }
     
     
-    
+    // открыть пикер для смены параметра сортировки
     @objc private func changeSortButton() {
         dealsTableView.isUserInteractionEnabled = !dealsTableView.isUserInteractionEnabled
         sortPickerView.isHidden = !sortPickerView.isHidden
     }
     
+    // сменить направление сортировки
     @objc private func reverseSortButton() {
         LocalStorage.shared.sortDerection = LocalStorage.shared.sortDerection == .first ? SortDerection.last : SortDerection.first
         LocalStorage.shared.sortModel {
             self.dealsTableView.reloadData()
         }
-//        dealsTableView.reloadData()
     }
     
+    // кнопка чтобы вернуться к первой ячейке
     @objc private func scrollUpButton() {
         DispatchQueue.main.async {
             let indexPath = IndexPath(row: 0, section: 0)
