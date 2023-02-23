@@ -13,6 +13,7 @@
 		5E3B441A29A78C0A000764AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3B441829A78C0A000764AB /* LaunchScreen.storyboard */; };
 		5E3B442329A78C68000764AB /* DealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B442229A78C68000764AB /* DealsViewController.swift */; };
 		5E3B442529A78CA0000764AB /* DealCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B442429A78CA0000764AB /* DealCustomCell.swift */; };
+		5E3B442829A78CC7000764AB /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B442729A78CC7000764AB /* HeaderTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5E3B441B29A78C0A000764AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E3B442229A78C68000764AB /* DealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsViewController.swift; sourceTree = "<group>"; };
 		5E3B442429A78CA0000764AB /* DealCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCustomCell.swift; sourceTree = "<group>"; };
+		5E3B442729A78CC7000764AB /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				5E3B442229A78C68000764AB /* DealsViewController.swift */,
 				5E3B442429A78CA0000764AB /* DealCustomCell.swift */,
+				5E3B442729A78CC7000764AB /* HeaderTableView.swift */,
 			);
 			path = "Deals Screen";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3B442529A78CA0000764AB /* DealCustomCell.swift in Sources */,
+				5E3B442829A78CC7000764AB /* HeaderTableView.swift in Sources */,
 				5E3B440E29A78C08000764AB /* AppDelegate.swift in Sources */,
 				5E3B441029A78C08000764AB /* SceneDelegate.swift in Sources */,
 				5E3B442329A78C68000764AB /* DealsViewController.swift in Sources */,
