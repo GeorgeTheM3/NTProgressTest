@@ -25,7 +25,6 @@ class DealCustomCell: UITableViewCell {
         stackView.addArrangedSubview(amountLabel)
         stackView.addArrangedSubview(sideLabel)
         stackView.distribution = .fillEqually
-//        stackView.alignment = .fill
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView

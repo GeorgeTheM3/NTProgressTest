@@ -19,6 +19,7 @@
 		5E3B442F29A78D35000764AB /* Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B442E29A78D35000764AB /* Extansion.swift */; };
 		5E3B443129A78D47000764AB /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B443029A78D47000764AB /* Delegates.swift */; };
 		5E3B443329A78DFA000764AB /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B443229A78DFA000764AB /* Server.swift */; };
+		5E3B443629A78E23000764AB /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B443529A78E23000764AB /* LocalStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5E3B442E29A78D35000764AB /* Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extansion.swift; sourceTree = "<group>"; };
 		5E3B443029A78D47000764AB /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		5E3B443229A78DFA000764AB /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		5E3B443529A78E23000764AB /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				5E3B443229A78DFA000764AB /* Server.swift */,
 				5E3B440D29A78C08000764AB /* AppDelegate.swift */,
 				5E3B440F29A78C08000764AB /* SceneDelegate.swift */,
+				5E3B443429A78E16000764AB /* LocalStorage */,
 				5E3B442929A78CE0000764AB /* Helper */,
 				5E3B442129A78C58000764AB /* Deals Screen */,
 				5E3B441629A78C0A000764AB /* Assets.xcassets */,
@@ -99,6 +102,14 @@
 				5E3B443029A78D47000764AB /* Delegates.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5E3B443429A78E16000764AB /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				5E3B443529A78E23000764AB /* LocalStorage.swift */,
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E3B443629A78E23000764AB /* LocalStorage.swift in Sources */,
 				5E3B443329A78DFA000764AB /* Server.swift in Sources */,
 				5E3B442529A78CA0000764AB /* DealCustomCell.swift in Sources */,
 				5E3B442829A78CC7000764AB /* HeaderTableView.swift in Sources */,
