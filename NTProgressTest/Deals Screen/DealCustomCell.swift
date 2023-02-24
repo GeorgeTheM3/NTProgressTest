@@ -89,35 +89,29 @@ class DealCustomCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // округляем стоимость до сотых
-    private func formatPrice(price: Double) -> String {
-        let numb = round(price * 100)/100
-        return String(numb)
-    }
-    
     // убираем лишние обозначения валютных пар
-    private func formatName(name: String) -> String {
+    private func setName(name: String) {
         var transformString = name.map({$0})
         transformString.remove(at: 3)
-        let result = String(transformString.prefix(while: {$0 != "_"}))
-        return result
+        instrumentNameLabel.text = String(transformString.prefix(while: {$0 != "_"}))
     }
     
-    // определяем операцию и цвет
-    private func transformSide(side: Deal.Side) -> String {
-        if side == Deal.Side.buy {
-            sideLabel.textColor = .systemGreen
-            return "Buy"
-        } else {
-            sideLabel.textColor = .red
-            return "Sell"
-        }
+    // округляем стоимость до сотых
+    private func setPrice(price: Double) {
+        let numb = round(price * 100)/100
+        priceLabel.text = String(numb)
     }
     
     // форматируем объем сделки
-    private func transformAmount(amount: Double) -> String {
+    private func setAmount(amount: Double) {
         let amount = Int(amount).formattedWithSeparator
-        return String(amount)
+        amountLabel.text = String(amount)
+    }
+    
+    // определяем операцию и цвет
+    private func setTextSideLabel(side: Deal.Side) {
+        sideLabel.text = side == Deal.Side.buy ? "Buy": "Sell"
+        sideLabel.textColor = side == Deal.Side.buy ? .systemGreen : .red
     }
 }
 
@@ -125,10 +119,10 @@ class DealCustomCell: UITableViewCell {
 extension DealCustomCell: PassInfoProtocol {
     func passInfo(dealInfo: Deal) {
         dealDateLabel.text = dealInfo.dateModifier.formatted()
-        instrumentNameLabel.text = formatName(name: dealInfo.instrumentName)
-        priceLabel.text = formatPrice(price: dealInfo.price)
-        amountLabel.text = transformAmount(amount: dealInfo.amount)
-        sideLabel.text = transformSide(side: dealInfo.side)
+        setName(name: dealInfo.instrumentName)
+        setPrice(price: dealInfo.price)
+        setAmount(amount: dealInfo.amount)
+        setTextSideLabel(side: dealInfo.side)
     }
 }
 
