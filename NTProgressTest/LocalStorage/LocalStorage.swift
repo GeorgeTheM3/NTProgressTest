@@ -30,46 +30,27 @@ class LocalStorage {
     func getDealCellsCount() -> Int {
         return dealCellsCount
     }
-
+    
     func saveDeals(deals:[Deal]) {
         model += deals
     }
     
     func sortModel(completion: @escaping () -> ()) {
-        if sortDerection == .first {
-            switch currentSortType {
-            case .instrument:
-                model.sort(by: {$0.instrumentName < $1.instrumentName})
-            case .price:
-                model.sort(by: {$0.price < $1.price})
-            case .amount:
-                model.sort(by: {$0.amount < $1.amount})
-            case .side:
-                let buy = model.filter({$0.side == .buy})
-                let sell = model.filter({$0.side == .sell})
-                model.removeAll()
-                model += sell
-                model += buy
-            case .id:
-                model.sort(by: {$0.id < $1.id})
-            }
-        } else {
-            switch currentSortType {
-            case .instrument:
-                model.sort(by: {$0.instrumentName > $1.instrumentName})
-            case .price:
-                model.sort(by: {$0.price > $1.price})
-            case .amount:
-                model.sort(by: {$0.amount > $1.amount})
-            case .side:
-                let buy = model.filter({$0.side == .buy})
-                let sell = model.filter({$0.side == .sell})
-                model.removeAll()
-                model += buy
-                model += sell
-            case .id:
-                model.sort(by: {$0.id > $1.id})
-            }
+        let buy = model.filter({$0.side == .buy})
+        let sell = model.filter({$0.side == .sell})
+        switch currentSortType {
+        case .instrument:
+            sortDerection == .first ? model.sort(by: {$0.instrumentName < $1.instrumentName}) : model.sort(by: {$0.instrumentName > $1.instrumentName})
+        case .price:
+            sortDerection == .first ? model.sort(by: {$0.price < $1.price}) : model.sort(by: {$0.price > $1.price})
+        case .amount:
+            sortDerection == .first ? model.sort(by: {$0.amount < $1.amount}) : model.sort(by: {$0.amount > $1.amount})
+        case .side:
+            model.removeAll()
+            model += sortDerection == .first ? buy : sell
+            model += sortDerection == .first ? sell : buy
+        case .id:
+            sortDerection == .first ? model.sort(by: {$0.id < $1.id}) : model.sort(by: {$0.id > $1.id})
         }
         completion()
     }
