@@ -36,8 +36,6 @@ class LocalStorage {
     }
     
     func sortModel(completion: @escaping () -> ()) {
-        let buy = model.filter({$0.side == .buy})
-        let sell = model.filter({$0.side == .sell})
         switch currentSortType {
         case .instrument:
             sortDerection == .first ? model.sort(by: {$0.instrumentName < $1.instrumentName}) : model.sort(by: {$0.instrumentName > $1.instrumentName})
@@ -46,6 +44,8 @@ class LocalStorage {
         case .amount:
             sortDerection == .first ? model.sort(by: {$0.amount < $1.amount}) : model.sort(by: {$0.amount > $1.amount})
         case .side:
+            let buy = model.filter({$0.side == .buy})
+            let sell = model.filter({$0.side == .sell})
             model.removeAll()
             model += sortDerection == .first ? buy : sell
             model += sortDerection == .first ? sell : buy
