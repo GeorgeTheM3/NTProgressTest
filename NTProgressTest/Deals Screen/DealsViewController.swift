@@ -20,6 +20,7 @@ class DealsViewController: UIViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.register(DealCustomCell.self, forCellReuseIdentifier: identifierDealCell)
         tableView.register(HeaderTableView.self, forHeaderFooterViewReuseIdentifier: identifierHeader)
@@ -52,6 +53,7 @@ class DealsViewController: UIViewController {
             LocalStorage.shared.sortModel {
                 self.dealsTableView.reloadData()
             }
+            LocalStorage.shared.getDealsInStorage().count < 101 ? LocalStorage.shared.addCells() : nil
         }
     }
     
@@ -114,7 +116,7 @@ extension DealsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        LocalStorage.shared.getDealsInStorage().count
+        LocalStorage.shared.getDealCellsCount()
     }
 }
 
@@ -163,3 +165,13 @@ extension DealsViewController: UIPickerViewDelegate {
     }
 }
 
+// MARK: UITableViewDataSourcePrefetching
+// подгрузка ячеек по мере прокрутки
+extension DealsViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard let maxCell = indexPaths.map({$0.row}).max() else { return }
+        if maxCell > (LocalStorage.shared.getDealCellsCount() - 5) {
+            LocalStorage.shared.addCells()
+        }
+    }
+}

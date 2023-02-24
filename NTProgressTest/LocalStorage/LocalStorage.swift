@@ -10,6 +10,9 @@ import Foundation
 class LocalStorage {
     static let shared = LocalStorage()
     
+    private var model: [Deal] = []
+    private var dealCellsCount = 0 // для реализации инфинити скрола храним колличество ячеек таблицы
+    
     // свойства для хранения параметра соритровки и направления
     var sortDerection: SortDerection = .first
     var currentSortType: SortType = .id
@@ -19,11 +22,18 @@ class LocalStorage {
         return model
     }
     
+    // увеличиваем колличество отображаемых ячеек
+    func addCells() {
+        dealCellsCount += 30
+    }
+    
+    func getDealCellsCount() -> Int {
+        return dealCellsCount
+    }
+
     func saveDeals(deals:[Deal]) {
         model += deals
     }
-    
-    private var model: [Deal] = []
     
     func sortModel(completion: @escaping () -> ()) {
         if sortDerection == .first {
