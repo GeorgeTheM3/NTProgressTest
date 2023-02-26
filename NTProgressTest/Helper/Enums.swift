@@ -12,7 +12,7 @@ enum SortType: String {
     case price
     case amount
     case side
-    case id
+    case date
 }
 
 enum SortDerection {

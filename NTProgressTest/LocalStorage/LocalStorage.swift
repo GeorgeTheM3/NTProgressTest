@@ -15,8 +15,8 @@ class LocalStorage {
     
     // свойства для хранения параметра соритровки и направления
     var sortDerection: SortDerection = .first
-    var currentSortType: SortType = .id
-    let arraySortsType = [SortType.id, SortType.instrument, SortType.price, SortType.amount, SortType.side]
+    var currentSortType: SortType = .date
+    let arraySortsType = [SortType.date, SortType.instrument, SortType.price, SortType.amount, SortType.side]
     
     func getDealsInStorage() -> [Deal]  {
         return model
@@ -37,6 +37,8 @@ class LocalStorage {
     
     func sortModel(completion: @escaping () -> ()) {
         switch currentSortType {
+        case .date:
+            sortDerection == .first ? model.sort(by: {$0.dateModifier > $1.dateModifier}) : model.sort(by: {$0.dateModifier < $1.dateModifier})
         case .instrument:
             sortDerection == .first ? model.sort(by: {$0.instrumentName < $1.instrumentName}) : model.sort(by: {$0.instrumentName > $1.instrumentName})
         case .price:
@@ -49,8 +51,6 @@ class LocalStorage {
             model.removeAll()
             model += sortDerection == .first ? buy : sell
             model += sortDerection == .first ? sell : buy
-        case .id:
-            sortDerection == .first ? model.sort(by: {$0.id < $1.id}) : model.sort(by: {$0.id > $1.id})
         }
         completion()
     }
