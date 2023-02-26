@@ -11,4 +11,4 @@
 
 **Результат:**
 
-![imgonline-com-ua-2to1-sSWgq2qwGb9](https://user-images.githubusercontent.com/99905582/221424203-0b1f19cb-dfe1-40e6-9e19-edb434f0022d.png)
+![view](https://user-images.githubusercontent.com/99905582/221425738-c11758e2-a665-4b28-ad15-c6c40da9df0a.png)
