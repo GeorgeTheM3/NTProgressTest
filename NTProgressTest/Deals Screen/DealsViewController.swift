@@ -44,6 +44,7 @@ class DealsViewController: UIViewController {
         super.viewDidLoad()
         setController()
         setNavigationBar()
+        setGestureRecognizer()
         getDataFromNetwork()
     }
     
@@ -61,6 +62,11 @@ class DealsViewController: UIViewController {
         view.addSubview(dealsTableView)
         view.addSubview(sortPickerView)
         view.backgroundColor = .white
+        
+    }
+    
+    private func setGestureRecognizer() {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeSortButton)))
     }
     
     private func setNavigationBar() {
